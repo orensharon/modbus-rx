@@ -7,19 +7,23 @@ This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial 
 Serial:
 
 `SerialParameters parameters = new SerialParameters();`
+
 `ModBusRx modBusRx = new ModBusRx(ModBusMasterFactory.getSerialMaster(parameters));`
+
 `modBusRx.connect(100);`
 
 TCP:
 
-`ModBusRx modBusRx = new ModBusRx(ModBusMasterFactory.getTCPMaster("address", 502));
-modBusRx.connect(100);`
+`ModBusRx modBusRx = new ModBusRx(ModBusMasterFactory.getTCPMaster("address", 502));`
+
+`modBusRx.connect(100);`
 
 Create requests:
-`modBusRx.writeHoldingRegister(1, 100, 80)
-         .subscribe();
 
-modBusRx.readHoldingRegisters(1, 0, 10)
+`modBusRx.writeHoldingRegister(1, 100, 80)
+         .subscribe();`
+
+`modBusRx.readHoldingRegisters(1, 0, 10)
          .subscribe(integers -> {
               for (Integer integer : integers)
                     System.out.println(integer);
