@@ -1,5 +1,5 @@
 # Overview
-This project use [j2mod](https://github.com/steveohara/j2mod/) library to make ModBus master requests by rxjava2.
+This project wrap [j2mod](https://github.com/steveohara/j2mod/) library to make ModBus master requests by rxjava2.
 
 This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial RTU and Serial ASCII).
 
@@ -22,12 +22,19 @@ This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial 
     
     // Read
     modBusRx.readHoldingRegisters(1, 0, 10)
-        .subscribe(integers -> {
-             for (Integer integer : integers)
-                   System.out.println(integer);
-             }
-        });
-        
+        .subscribe(values -> System.out.println(Arrays.toString(values));
+
+And more complex:
+
+     Observable<Integer[]> read = modBusRx.readHoldingRegisters(1, 10, 1);
+        Observable.concat(
+                modBusRx.writeHoldingRegister(1, 106,10).andThen(read),
+                modBusRx.writeHoldingRegister(1, 106, 20).andThen(read),
+                modBusRx.writeHoldingRegister(1, 106, 30).andThen(read),
+                modBusRx.writeHoldingRegister(1, 106, 40).andThen(read)
+        ).subscribe(values -> System.out.println(Arrays.toString(values)));
+
+
 # Supported functions:
 * `Completable writeHoldingRegister(int deviceId, int address, int data);`
 
