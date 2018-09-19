@@ -29,13 +29,13 @@ This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial 
         });
         
 # Supported functions:
-* `Completable writeHoldingRegister(final int deviceId, final int address, final int data);`
+* `Completable writeHoldingRegister(int deviceId, int address, int data);`
 
-* `Completable writeHoldingRegisters(final int deviceId, final int address, final int[] data);`
+* `Completable writeHoldingRegisters(int deviceId, int address, int[] data);`
 
-* `Completable writeCoil(final int deviceId, final int address, final boolean coil);`
+* `Completable writeCoil(int deviceId, int address, boolean coil);`
 
-* `Completable writeCoils(final int deviceId, final int address, final boolean[] coils);`
+* `Completable writeCoils(int deviceId, int address, boolean[] coils);`
 
 * `Observable<Integer[]> readInputRegisters(int deviceId, int address, int length);`
 
