@@ -6,10 +6,9 @@ This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial 
 
 Serial:
 
-`SerialParameters parameters = new SerialParameters();
-...
-ModBusRx modBusRx = new ModBusRx(ModBusMasterFactory.getSerialMaster(parameters));
-modBusRx.connect(100);`
+`SerialParameters parameters = new SerialParameters();`
+`ModBusRx modBusRx = new ModBusRx(ModBusMasterFactory.getSerialMaster(parameters));`
+`modBusRx.connect(100);`
 
 TCP:
 
