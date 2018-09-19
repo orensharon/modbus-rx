@@ -19,6 +19,7 @@ This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial 
 ### Create requests:
     // Write
     modBusRx.writeHoldingRegister(1, 100, 80).subscribe();
+    
     // Read
     modBusRx.readHoldingRegisters(1, 0, 10)
         .subscribe(integers -> {
