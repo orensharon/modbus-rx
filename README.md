@@ -1,5 +1,5 @@
 # Overview
-This project wrap [j2mod](https://github.com/steveohara/j2mod/) library to make ModBus master requests by rxjava2.
+This project is [j2mod](https://github.com/steveohara/j2mod/) library wrapper for making  ModBus master requests with rxjava2.
 
 This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial RTU and Serial ASCII).
 
