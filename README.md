@@ -1,5 +1,6 @@
 # Overview
 This project use [j2mod](https://github.com/steveohara/j2mod/) library to make ModBus requests with rxjava2.
+
 This implementation supports only Modbus master (TCP, UDP, RTU over TCP, Serial RTU and Serial ASCII).
 
 # Usage
